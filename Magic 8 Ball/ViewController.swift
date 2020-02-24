@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var prediction: Int = 0
+    
+    let ballArray = [#imageLiteral(resourceName: "ball1.png"),#imageLiteral(resourceName: "ball3"),#imageLiteral(resourceName: "ball4"),#imageLiteral(resourceName: "ball2"),#imageLiteral(resourceName: "ball5")]
     
 
     @IBOutlet weak var ballImage1: UIImageView!
@@ -16,18 +19,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
     super.viewDidLoad()
         
-        ballImage1.image = #imageLiteral(resourceName: "ball3")
+        ballImage1.image = ballArray [prediction]
         
     }
     
   
-    
-    
-    let ballArray = [#imageLiteral(resourceName: "ball1.png"),#imageLiteral(resourceName: "ball2.png"),#imageLiteral(resourceName: "ball3.png"),#imageLiteral(resourceName: "ball4.png"),#imageLiteral(resourceName: "ball5.png")]
-
 
     @IBAction func buttonTest(_ sender: UIButton) {
-        print("please work. please.")
+        ballImage1.image = ballArray [Int.random(in:0...4)]
     }
     
 }
